@@ -22,3 +22,9 @@ document.addEventListener("keydown", function(e) {
  BatY = BatY + 15;
   }
 })
+
+
+var food1X=Number(document.getElementById("food1").getAttribute("x"));
+ var food1y=Number(document.getElementById("food1").getAttribute("y"));
+ var food2X=Number(document.getElementById("food2").getAttribute("x"));
+ var food2y=Number(document.getElementById("food2").getAttribute("y"));
