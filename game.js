@@ -1,5 +1,13 @@
+var foodCounter = 0;
+
 BatX = 250;
 BatY = 0;
+
+function randomNumber(min,max)
+{
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+
 document.addEventListener("keydown", function(e) {
   if(e.keyCode == 37){
 
@@ -23,13 +31,27 @@ document.addEventListener("keydown", function(e) {
   }
 
   var food1x = Number(document.getElementById("food1").getAttribute("x"))
-   var food1y = Number(document.getElementById("food1").getAttribute("y"))
-   var food2x = Number(document.getElementById("food2").getAttribute("x"))
-   var food2y = Number(document.getElementById("food2").getAttribute("y"))
+  var food1y = Number(document.getElementById("food1").getAttribute("y"))
+  var food2x = Number(document.getElementById("food2").getAttribute("x"))
+  var food2y = Number(document.getElementById("food2").getAttribute("y"))
 
 
-  if (BatX > food1x && BatY < food1y + 20 && BatY > food1y && BatY < food1y + 20) {
-    console.log("Overlap!!")
+  if (BatY > food1y && BatX < food1x + 40 && BatX > food1x && BatX < food1x + 40) {
+    console.log("You Ate!")
+    var randY = randomNumber(40,340)
+    document.getElementById("food1").setAttribute("y", randY)
+    foodCounter = foodCounter + 1;
+    document.getElementById("text1").textContent = foodCounter;
   }
+
+  else if (BatY > food2y && BatX < food2x + 40 && BatX > food2x && BatX < food2x + 40) {
+    console.log("You Ate!")
+    var randY = randomNumber(40,340)
+    document.getElementById("food1").setAttribute("y", randY)
+    foodCounter = foodCounter + 1;
+    document.getElementById("text1").textContent = foodCounter;
+  }
+
+
 
 })
