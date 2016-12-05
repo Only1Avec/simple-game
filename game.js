@@ -47,11 +47,12 @@ document.addEventListener("keydown", function(e) {
   else if (BatY > food2y && BatX < food2x + 40 && BatX > food2x && BatX < food2x + 40) {
     console.log("You Ate!")
     var randY = randomNumber(40,340)
-    document.getElementById("food1").setAttribute("y", randY)
+    document.getElementById("food2").setAttribute("y", randY)
     foodCounter = foodCounter + 1;
     document.getElementById("text1").textContent = foodCounter;
   }
 
-
-
-})
+  if (foodCounter == 5) {
+     document.getElementById("screen").setAttribute("style", "background-image: url('https://i.ytimg.com/vi/vJaAy3jmEx8/maxresdefault.jpg')");
+   }
+ })
